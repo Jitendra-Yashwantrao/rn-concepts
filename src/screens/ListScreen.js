@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 const ListScreen = () => {
   const friends = [
@@ -18,21 +19,158 @@ const ListScreen = () => {
     <FlatList
       keyExtractor={friend => friend.name}
       data={friends}
-      renderItem={({ item }) => {
-        return (
-          <Text style={styles.textStyle}>
-            {item.name} - Age {item.age}
-          </Text>
-        );
-      }}
+      renderItem={({ item }) => <ListItem {...item} />}
+    // renderItem={({ item }) => {
+    //   return (
+    //     <Text style={styles.textStyle}>
+    //       {item.name} - Age {item.age}
+    //     </Text>
+    //   );
+    // }}
     />
+  );
+};
+
+const ListItem = ({ name }) => {
+  return (
+    <Swipeable
+      onSwipeableLeftOpen={() => console.log('Swiped Leftt')}
+      onSwipeableRightOpen={() => console.log('Swiped right')}
+      renderLeftActions={(progress, dragx) => {
+        console.log("progress", progress);
+        console.log("dragx", dragx);
+        return (
+
+          < LeftItem />
+
+        )
+      }}
+      renderRightActions={(progress, dragx) => {
+        console.log("progress", progress);
+        console.log("dragx", dragx);
+        return (
+
+          < RightItem />
+
+        )
+      }} >
+      <View style={styles.listItem}>
+        <Text style={styles.description}>{name}</Text>
+      </View>
+    </Swipeable >
+  );
+};
+
+const LeftItem = () => {
+  return (
+    <View style={styles.leftItem}>
+      <Text style={[styles.leftItemText]}>Open</Text>
+    </View>
+  );
+};
+
+const RightItem = () => {
+  return (
+    <View style={styles.rightItem}>
+      <TouchableOpacity style={styles.deleteButtonStyle}>
+        <Text style={styles.textButtonStyle}>Delete</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.archiveButtonStyle}>
+        <Text style={styles.archiveTextButtonStyle}>Archive</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   textStyle: {
     marginVertical: 10
-  }
+  },
+
+
+  leftItem: {
+    flex: 1,
+    backgroundColor: '#76a21e',
+    justifyContent: 'center',
+  },
+  archiveButtonStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    backgroundColor: '#3e64ff',
+  },
+  archiveTextButtonStyle: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  textButtonStyle: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  deleteButtonStyle: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    backgroundColor: '#c00000',
+  },
+  rightItem: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: 'yellow',
+    justifyContent: 'center',
+  },
+  leftItemText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginLeft: 20,
+    color: '#fff',
+  },
+  listItemWrapper: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+
+  listItem: {
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    borderTopWidth: 0.6,
+    borderBottomWidth: 0.6,
+    borderBottomColor: '#ccc',
+    borderTopColor: '#ccc',
+    flex: 1,
+    height: 60,
+    backgroundColor: '#fff',
+  },
+  item2: {
+    flex: 4,
+    justifyContent: 'center',
+  },
+  item: {
+    flex: 2,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  textBtn: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  btn: {
+    backgroundColor: '#ccc',
+    padding: 10,
+    borderRadius: 6,
+    width: '80%',
+    margin: 5,
+    alignSelf: 'center',
+  },
+  description: {
+    fontSize: 16,
+    color: '#000',
+  },
 });
 
 export default ListScreen;

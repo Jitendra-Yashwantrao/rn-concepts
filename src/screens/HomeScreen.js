@@ -37,6 +37,23 @@ const HomeScreen = ({ navigation }) => {
         title="Go to Box Demo"
         onPress={() => navigation.navigate('Box')}
       />
+      <Button
+        title="Go to PanGuestureHandler demo"
+        onPress={() => navigation.navigate('Pan')}
+      />
+      <Button
+        title="Go to Use Effect demo"
+        onPress={() => navigation.navigate('UE')}
+      />
+      <Button
+        title="Go to Animation  demo"
+        onPress={() => navigation.navigate('Animation')}
+      />
+
+      <Button
+        title="Go to drag square demo"
+        onPress={() => navigation.navigate('DragSquare')}
+      />
     </View>
   );
 };

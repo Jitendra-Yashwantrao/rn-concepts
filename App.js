@@ -9,6 +9,10 @@ import ColorScreen from './src/screens/ColorScreen';
 import SquareScreen from './src/screens/SquareScreen';
 import TextScreen from './src/screens/TextScreen';
 import BoxScreen from './src/screens/BoxScreen';
+import PanGuestureScreen from './src/screens/PanGuestureScreen'
+import UseEffectScreen from "./src/screens/UseEffectScreen";
+import AnimationScreen from "./src/screens/AnimationScreen"
+import DragSquareScreen from "./src/screens/DragSuareScreen"
 
 const navigator = createStackNavigator(
   {
@@ -20,7 +24,11 @@ const navigator = createStackNavigator(
     Color: ColorScreen,
     Square: SquareScreen,
     Text: TextScreen,
-    Box: BoxScreen
+    Box: BoxScreen,
+    Pan: PanGuestureScreen,
+    UE: UseEffectScreen,
+    Animation: AnimationScreen,
+    DragSquare: DragSquareScreen,
   },
   {
     initialRouteName: 'Home',
