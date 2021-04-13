@@ -5,29 +5,26 @@ const TopDownView = (props) => {
 
     const ballAnim = useRef(new Animated.ValueXY(0, 0)).current;
 
-    console.log('ball animation', ballAnim.getLayout());
+    console.log('ball animation', ballAnim.getTranslateTransform());
     useEffect(() => {
         Animated.spring(
             ballAnim,
             {
                 toValue: { x: 150, y: 550 },
-                // duration: 10000,
                 useNativeDriver: true,
             }
-        ).start(
-            //     (props) => {
+        ).start((props) => {
 
-            //     console.log('TopDownView finish called', props)
-            // }
+            console.log('TopDownView finish called', ballAnim.getTranslateTransform(), "props", props)
+        }
         );
     }, [ballAnim])
 
     return (
-        <Animated.View
-            style={ballAnim.getTranslateTransform()}
-        >
-            {props.children}
-        </Animated.View>
+        <Animated.View style={{ transform: ballAnim.getTranslateTransform() }
+        } >
+            { props.children}
+        </Animated.View >
     );
 }
 

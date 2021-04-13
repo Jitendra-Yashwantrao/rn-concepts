@@ -7,7 +7,7 @@ const AnimationScreen = () => {
 
     return (
         <View style={{
-            alignItems: 'center',
+
 
             flex: 1
         }}>
@@ -17,12 +17,13 @@ const AnimationScreen = () => {
 
             <FadeInView style={{
                 backgroundColor: 'powderblue',
-                width: 250,
-                height: 75
+                width: 150,
+                height: 55,
+                alignItems: 'center'
             }} >
                 <Text style={{
                     fontSize: 28,
-                    textAlign: 'center',
+                    textAlign: 'right',
                     margin: 10
                 }}>Welcome</Text>
             </FadeInView>
