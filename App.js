@@ -1,18 +1,18 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import HomeScreen from './src/screens/HomeScreen';
-import ComponentsScreen from './src/screens/ComponentsScreen';
-import ListScreen from './src/screens/ListScreen';
-import ImageScreen from './src/screens/ImageScreen';
-import CounterScreen from './src/screens/CounterScreen';
-import ColorScreen from './src/screens/ColorScreen';
-import SquareScreen from './src/screens/SquareScreen';
-import TextScreen from './src/screens/TextScreen';
-import BoxScreen from './src/screens/BoxScreen';
-import PanGuestureScreen from './src/screens/PanGuestureScreen'
-import UseEffectScreen from "./src/screens/UseEffectScreen";
-import AnimationScreen from "./src/screens/AnimationScreen"
-import DragSquareScreen from "./src/screens/DragSuareScreen"
+import HomeScreen from '~/screens/HomeScreen';
+import ComponentsScreen from '~/screens/ComponentsScreen';
+import ListScreen from '~/screens/ListScreen';
+import ImageScreen from '~/screens/ImageScreen';
+import CounterScreen from '~/screens/CounterScreen';
+import ColorScreen from '~/screens/ColorScreen';
+import SquareScreen from '~/screens/SquareScreen';
+import TextScreen from '~/screens/TextScreen';
+import BoxScreen from '~/screens/BoxScreen';
+import PanGuestureScreen from '~/screens/animations/PanGuestureScreen'
+import UseEffectScreen from "~/screens/animations/UseEffectScreen";
+import AnimationScreen from "~/screens/animations/AnimationScreen"
+import DragSquareScreen from "~/screens/animations/DragSuareScreen"
 
 const navigator = createStackNavigator(
   {
