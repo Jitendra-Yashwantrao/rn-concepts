@@ -20,25 +20,14 @@ const DragSquareScreen = () => {
             // moving
             onPanResponderMove: (evt, gestureState) => {
                 console.log('x,y', gestureState.dx, gestureState.dy)
-                // return Animated.event(
-                //     [
-                //         null,
-                //         {
-                //             dx: pan.x,
-                //             dy: pan.y,
-                //         }
 
-                //     ],
-                //     {
-                //         useNativeDriver: false
-                //     }
-                // )(evt, gestureState)
+                pan.setValue({ x: gestureState.dx, y: gestureState.dy })
                 return (evt, gestureState)
 
             },
             onPanResponderRelease: (evt, gestureState) => {
-                console.log('x,y', gestureState.dx, gestureState.dy, evt)
-                //pan.flattenOffset();
+                // console.log('x,y', gestureState.dx, gestureState.dy, evt)
+                pan.flattenOffset();
             },
         })
     ).current
