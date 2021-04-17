@@ -13,6 +13,7 @@ import PanGuestureScreen from '~/screens/animations/PanGuestureScreen'
 import UseEffectScreen from "~/screens/animations/UseEffectScreen";
 import AnimationScreen from "~/screens/animations/AnimationScreen"
 import DragSquareScreen from "~/screens/animations/DragSuareScreen"
+import ImageListScreen from "~/screens/animations/ImageListScreen"
 
 const navigator = createStackNavigator(
   {
@@ -29,6 +30,7 @@ const navigator = createStackNavigator(
     UE: UseEffectScreen,
     Animation: AnimationScreen,
     DragSquare: DragSquareScreen,
+    ImageList: ImageListScreen,
   },
   {
     initialRouteName: 'Home',

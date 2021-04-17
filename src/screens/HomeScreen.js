@@ -54,6 +54,10 @@ const HomeScreen = ({ navigation }) => {
         title="Go to drag square demo"
         onPress={() => navigation.navigate('DragSquare')}
       />
+      <Button
+        title="Go to image navigator  demo"
+        onPress={() => navigation.navigate('ImageList')}
+      />
     </View>
   );
 };
